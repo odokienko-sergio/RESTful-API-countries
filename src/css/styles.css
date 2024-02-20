@@ -1,0 +1,244 @@
+body, h1, p, input, select {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 0 0 20px 0;
+}
+
+.main {
+    padding: 0 0 70px 0;
+}
+
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 25px auto 0 auto;
+}
+
+.searchInput {
+    border-radius: 6px;
+    border: 1px solid #999;
+    padding: 7px 15px;
+}
+
+.select-wrapper {
+    position: relative;
+    width: fit-content;
+}
+
+.custom-select {
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 30px 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%) rotate(0deg);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotate-arrow {
+    transform: translateY(-50%) rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.custom-select:focus + .arrow-icon,
+.custom-select.open + .arrow-icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.search-container {
+    position: relative;
+}
+
+#searchInput {
+    padding-right: 40px;
+    padding-left: 10px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 48%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.search-icon svg {
+    width: 16px;
+    height: 16px;
+    color: #aaa;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    background: #000;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    width: 60px;
+    height: 40px;
+}
+
+.theme-switcher label {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switcher input[type="checkbox"] {
+    display: none;
+}
+
+.theme-switcher label {
+    position: relative;
+    padding-left: 40px;
+}
+
+.theme-switcher label::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    display: inline-block;
+    background-image: url('../../src/img/switcher.png');
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dark-theme .theme-switcher label::before {
+    left: calc(100% - 13px);
+    background-color: blue;
+}
+
+.theme-switcher input[type="checkbox"]:checked + label::before {
+    left: calc(100% - 30px);
+    background-color: blue;
+}
+
+.countries-list {
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 30px auto 0;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.custom-select {
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.dark-theme .custom-select {
+    background-color: #000;
+    color: #fff;
+}
+
+.country-card {
+    border: 1px solid #ddd;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.country-card-block {
+    padding: 25px;
+}
+
+.block {
+    margin: 10px 0;
+}
+
+.country-card-title {
+    margin: 0 0 10px 0;
+}
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 0 20px 20px 20px;
+    }
+
+    .country-card {
+        border: 1px solid #ddd;
+        padding: 0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+    }
+
+    .header-controls {
+        flex-direction: column-reverse;
+    }
+
+    .custom-select {
+        width: 100%;
+    }
+
+    .select-wrapper {
+        width: auto;
+    }
+
+    .searchInput {
+        width: 100%;
+        margin: 15px 0 0 0;
+    }
+
+    .search-icon {
+        top: 67%;
+    }
+
+    .country-img {
+        max-width: inherit;
+    }
+
+    .countries-list {
+        justify-content: space-around;
+    }
+}
+
+.country-img {
+    max-width: 270px;
+    margin: 0 auto;
+    display: block;
+}
+
+.dark-theme {
+    background: black;
+    color: #fff;
+}
+
+
